@@ -1,0 +1,11 @@
+global:
+  scrape_interval:     180s
+  evaluation_interval: 180s
+   
+scrape_configs:
+  - job_name: 'helloworld'
+    static_configs:
+      - targets: ['helloworld:9095'] 
+
+remote_write:
+  - url: "http://prometheus-kafka-adapter:8080/receive"
